@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Run Test Cukes" parallel="tests" verbose="1"
+	configfailurepolicy="continue" thread-count="1">
+
+	<listeners>
+		<!-- This TestNG listener takes care of setting up and tearing down the 
+			WebDriver, and it also changes test names in the final TestNG HTML report. -->
+		<listener class-name="com.CucumberCraft.supportLibraries.WebDriverListener" />
+	</listeners>
+
+	<!-- Possible Parameters and Values -->
+	<!-- ExecutionMode = LOCAL,REMOTE,MOBILE,PERFECTO,SEETEST,MINT,SAUCELABS -->
+	<!-- MobileExecutionPlatform = ANDROID, IOS, WEB_ANDROID, WEB_IOS -->
+	<!-- BrowserName = CHROME,FIREFOX,INTERNET_EXPLORER -->
+	<!-- DeviceName = "Please give the respective deviceName/UDID" OR ManufacturerName 
+		= Apple etc., ModelName = iPhone 7etc., -->
+	<!-- BrowserVersion ="" (Applicable Only if ExecutionMode is REMOTE or SAUCELABS) -->
+	<!-- Platform =WINDOWS etc., (Applicable Only if ExecutionMode is REMOTE 
+		or SAUCELABS)- -->
+
+	<test name="Regression Testing....">
+		<parameter name="ExecutionMode" value="LOCAL" />
+		<parameter name="BrowserName" value="CHROME" />
+		<classes>
+			<class name="com.CucumberCraft.TestNGrunners.RunCucumberTests_Regression" />
+		</classes>
+	</test>
+
+</suite>

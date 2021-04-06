@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Run Test Cukes" parallel="tests" verbose="1"
+	configfailurepolicy="continue" thread-count="3">
+
+	<listeners>
+		<!-- This TestNG listener takes care of setting up and tearing down the 
+			WebDriver, and it also changes test names in the final TestNG HTML report. -->
+		<listener class-name="com.CucumberCraft.supportLibraries.WebDriverListener" />
+	</listeners>
+
+	<!-- Possible Parameters and Values -->
+	<!-- ExecutionMode = LOCAL,MOBILE,PERFECTO,SEETEST,MINT,SAUCELABS -->
+	<!-- MobileExecutionPlatform = ANDROID, IOS, WEB_ANDROID, WEB_IOS -->
+	<!-- BrowserName = CHROME,FIREFOX,INTERNET_EXPLORER -->
+	<!-- DeviceName = "Please give the respective deviceName/UDID" OR ManufacturerName 
+		= Apple etc., ModelName = iPhone 7etc., -->
+	<!-- BrowserVersion ="" (Applicable Only if ExecutionMode is REMOTE or SAUCELABS) -->
+	<!-- Platform =WINDOWS etc., (Applicable Only if ExecutionMode is REMOTE 
+		or SAUCELABS)- -->
+
+	<test name="Smoke testing....">
+		<parameter name="ExecutionMode" value="REMOTE" />
+		
+		<parameter name="BrowserName" value="CHROME" />
+			<parameter name="Platform" value="LINUX" />
+			<parameter name="BrowserVersion" value="70.0.3538.67" />
+		
+    
+		<classes>
+			<class name="com.CucumberCraft.TestNGrunners.RunCucumberTests_Smoke" />
+		</classes>
+	</test>
+		
+	<!-- <test name="Smoke Tests using Appium"> <parameter name="ExecutionMode" 
+		value="MOBILE" /> <parameter name="MobileToolName" value="APPIUM" /> <parameter 
+		name="MobileExecutionPlatform" value="ANDROID" /> <parameter name="DeviceName" 
+		value="4818c4e6" /> <classes> <class name="com.CucumberCraft.TestNGrunners.RunCucumberTests_Smoke" 
+		/> </classes> </test> -->
+
+
+</suite>

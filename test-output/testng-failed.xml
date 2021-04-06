@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" configfailurepolicy="continue" guice-stage="DEVELOPMENT" name="Failed suite [Run Test Cukes]" parallel="tests">
+  <listeners>
+    <listener class-name="com.CucumberCraft.supportLibraries.WebDriverListener"/>
+  </listeners>
+  <test name="Smoke testing....(failed)" parallel="tests">
+    <parameter name="BrowserName" value="CHROME"/>
+    <parameter name="Platform" value="LINUX"/>
+    <parameter name="ExecutionMode" value="REMOTE"/>
+    <parameter name="BrowserVersion" value="70.0.3538.67"/>
+    <classes>
+      <class name="com.CucumberCraft.TestNGrunners.RunCucumberTests_Smoke">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="test"/>
+          <include name="copyStoredReports"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.CucumberCraft.TestNGrunners.RunCucumberTests_Smoke -->
+    </classes>
+  </test> <!-- Smoke testing....(failed) -->
+</suite> <!-- Failed suite [Run Test Cukes] -->
